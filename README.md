@@ -52,7 +52,8 @@ Output:
 [
     {
         "turn": {
-            "time": 0
+            "time": 0,
+            "attacker": ""
         },
         "player1": {
             "name": "Porkkana1",
@@ -78,7 +79,8 @@ Output:
 
        {
         "turn": {
-            "time": 38.40000000000001
+            "time": 38.40000000000001,
+            "attacker": "Porkkana1"
         },
         "player1": {
             "name": "Porkkana1",

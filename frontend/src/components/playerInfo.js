@@ -13,4 +13,4 @@ const PlayerInfo = (props) => {
     );
 };
 
-export default PlayerInfo
+export default PlayerInfo;
