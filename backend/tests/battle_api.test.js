@@ -1,0 +1,66 @@
+const supertest = require('supertest')
+const app = require('../app.js')
+
+const api = supertest(app);
+const endpoint = '/api/battle/initialize'
+
+describe('Battle API endpoints', () => {
+    it('battle object initialized correctly', async () => {
+        const body = {
+            player1: {
+                name: "Porkkana1",
+                energyKcal: 33,
+                carbohydrate: 5.6,
+                protein: 0.6,
+                fat: 0.2
+                },
+            player2: {
+                name: "Porkkana2",
+                energyKcal: 33,
+                carbohydrate: 6.0,
+                protein: 0.6,
+                fat: 0.2
+            }
+        };
+        const response = await api.post(endpoint).send(body);
+        expect(response.status).toEqual(200);
+        expect(response.body[0]).toEqual(
+            expect.objectContaining({
+                player1: expect.objectContaining({
+                    delay: 6.4,
+                    time_to_next_move: 6.4
+                })
+            })
+        );
+        expect(response.body[0]).toEqual(
+            expect.objectContaining({
+                player2: expect.objectContaining({
+                    delay: 6.8,
+                    time_to_next_move: 6.8
+                })
+            })
+        );
+        expect(response.body[0]).toEqual(
+            expect.objectContaining({
+                turn: expect.objectContaining({
+                    time: 0,
+                    attacker: ""
+                })
+            })
+        );
+    });
+    
+    it('non-valid payload, player1 missing', async() => {
+        const body = {
+            player1: {
+                name: "Porkkana1",
+                energyKcal: 33,
+                carbohydrate: 5.6,
+                protein: 0.6,
+                fat: 0.2
+                }
+        };
+        const response = await api.post(endpoint).send(body);
+        expect(response.status).toEqual(400);
+    })
+});
