@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import './App.css'
 import BattleInfo from './components/battleInfo';
 import PlayerInfo from './components/playerInfo';
-//import PlayerSelectionForm from './components/playerSelectionForm';
 
 function App() {
 
@@ -53,9 +52,15 @@ function App() {
         player1: player[0],
         player2: player[1]
       }
-      console.log(body);
       axios.post(battle_url, body)
         .then(response => setBattle(response.data))
+    }
+
+    const initializeNewBattle = () => {
+      setData([]);
+      setPlayer([]);
+      setFilter('');
+      setBattle();
     }
 
 
@@ -70,6 +75,7 @@ function App() {
           defender={line.turn.attacker.fi !== line.player1.name.fi ? line.player1 : line.player2}
           />)}
           <div>{battle.at(-1).turn.attacker.fi} voitti taistelun!</div>
+          <button onClick={(() => initializeNewBattle())}>Aloita uusi taistelu</button>
       </div>
   );
 
