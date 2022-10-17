@@ -1,33 +1,8 @@
-/*
-*   Vuoro-objekti:
-*
-*    {
-*        "turn": {
-*            "time": 38.40000000000001
-*            "attacker": "Porkkana1"
-*        },
-*        "player1": {
-*            "name": "Porkkana1",
-*            "energyKcal": 3,
-*            "carbohydrate": 5.6,
-*            "protein": 0.6,
-*            "fat": 0.2,
-*            "delay": 6.4,
-*            "time_to_next_move": 4.400000000000003
-*        },
-*        "player2": {
-*            "name": "Porkkana2",
-*            "energyKcal": 0,
-*            "carbohydrate": 6,
-*            "protein": 0.6,
-*            "fat": 0.2,
-*            "delay": 6.8,
-*            "time_to_next_move": 6.8
-*        }
-*    }
-*
-* obj.key = "value";
-*/
+/**
+ * Player class creates a player object based on request body.
+ * Additionally, the player receives two ner values, delay and time_to_next_move.
+ * Delay tells how slow the player is to attack. Time_to_next_move determines, which player attacks next.
+ */
 class Player {
     constructor(payload) {
         this.name = payload.name;
@@ -40,6 +15,9 @@ class Player {
     }
 }
 
+/**
+ * Turn class contains timestamp and the attacker of the turn in question.
+ */
 class Turn {
     constructor(time, attacker) {
         this.time = time;
@@ -47,18 +25,32 @@ class Turn {
     }
 }
 
+/**
+ * Updates the values of turn's objects.
+ * 
+ * @param {Turn} turn On-going turn
+ * @param {Player} attacker Player, who is attacker
+ * @param {Player} defender Player, who is defender
+ */
 const attack = (turn, attacker, defender) => {
     turn.attacker = attacker.name;
     defender.energyKcal -= attacker.carbohydrate;
     turn.time += attacker.time_to_next_move;
-    if (defender.energyKcal < 0) defender.energyKcal = 0;
+    if (defender.energyKcal < 0) defender.energyKcal = 0; // Defender's health cannot be negative.
     else {
         defender.time_to_next_move -= attacker.time_to_next_move;
         attacker.time_to_next_move = attacker.delay;
     }
 };
 
-// returns next turn's details = object
+/**
+ * Determines, which player is attacker and which defender based on time_to_next_move.
+ * Then passes objects to attack-function which actually updates the values.
+ * 
+ * @param {Turn} turn Turn object
+ * @param {Player} player1 First player
+ * @param {Player} player2 Second player
+ */
 const createNextTurn = (turn, player1, player2) => {
     player1.time_to_next_move <= player2.time_to_next_move ? 
         attack(turn, player1, player2) :
@@ -66,6 +58,12 @@ const createNextTurn = (turn, player1, player2) => {
 };
 
 module.exports = {
+    /**
+     * Creates a battle array, which contains details for each turn.
+     * 
+     * @param {JSON} payload Request body, contains players' details.
+     * @returns Battle array as JSON.
+     */
     initializeBattle: (payload) => {
         battleArray = [];
         const player1 = new Player(payload.player1);
