@@ -69,7 +69,7 @@ module.exports = {
         const player1 = new Player(payload.player1);
         const player2 = new Player(payload.player2);
         const turn = new Turn(0.0, '')
-        battleArray.push(JSON.parse(JSON.stringify({ turn, player1, player2 })));
+        //battleArray.push(JSON.parse(JSON.stringify({ turn, player1, player2 })));
 
         while (player1.energyKcal > 0 && player2.energyKcal > 0) {
             createNextTurn(turn, player1, player2);
