@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+}
+
+.player-details {
   display: flex;
   flex-direction: row;
 }
@@ -10,6 +13,10 @@
 
 .right {
   width: 50%;
+}
+
+.battle {
+  margin: 1em;
 }
 
 .App-logo {
