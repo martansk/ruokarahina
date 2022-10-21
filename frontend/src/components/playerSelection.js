@@ -1,8 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { useDispatch, useSelector } from 'react-redux'
-import { addData, removeData } from '../reducers/dataReducer';
-import { addFilter, removeFilter } from "../reducers/filterReducer";
+import { useDispatch } from 'react-redux'
 import { addPlayer } from "../reducers/playerReducer";
 
 /**
@@ -15,24 +13,28 @@ import { addPlayer } from "../reducers/playerReducer";
 const PlayerSelection = (props) => {
     
     const dispatch = useDispatch();
+    const [ filter, setFilter ] = useState('');
+    const [ data, setData ] = useState([]);
     
     const url = 'http://localhost:3001/api/food/';
     
-    const data = useSelector((state) => state.data);
-    const filter = useSelector((state) => state.filter);
+    //const data = useSelector((state) => state.data);
+    //const filter = useSelector((state) => state.filter);
 
 
     const findFoods = (filter) => {
         try {
-            if (filter === '') dispatch(removeData()) // if there's no filter, show no data
-            else {
+            //if (filter === '') dispatch(removeData()) // if there's no filter, show no data
+            //else {
                 axios
                     .get(url + filter) //e.g. .../api/food/omen
                     .then(response => {
-                    dispatch(addData(response.data));
+                    //dispatch(addData(response.data));
+                    setData(response.data);
                 });
-            }
-            dispatch(addFilter(filter));
+            //}
+            //dispatch(addFilter(filter));
+            setFilter(filter);
         } catch (e) {
             console.log(e.message);
         }
@@ -50,30 +52,41 @@ const PlayerSelection = (props) => {
 
     const selectPlayer = (id) => {
         const playerObject = findByID(data, id);
-        dispatch(addPlayer(playerObject[0]));
-        dispatch(removeFilter());
-        dispatch(removeData());
+        dispatch(addPlayer( [ playerObject[0], props.nro-1 ]));
+        //dispatch(removeFilter());
+        //dispatch(removeData());
+        setFilter('');
+        setData([]);
     };
 
     const results = (data) => {
         if (data.length > 100) return "Liikaa hakutuloksia, anna tarkemmat hakuehdot.";
         else return data.map(data =>
-        <div key={data.id}> {data.name.fi} <button onClick={() => selectPlayer(data.id)}> valitse </button> </div>
+        <div className="dropdown-line" key={data.id} onClick={() => selectPlayer(data.id)}> {data.name.fi}</div>
         );
     };
     
     return (
         <div>
       
-        Valitse {props.x}. pelaaja:
-        
+        <div className="search-container">
+      
         <form>
-          <input
+        
+        <div className="player-label">
+            <label>Valitse {props.x}. pelaaja:</label>
+        </div>
+
+        <div className="inner-container">
+        <input
             value={filter}
             onChange={handleFind} />
+        </div>
         </form>
-
+        <div className="dropdown">
         {results(data)}
+        </div>
+        </div>
   
         </div>
     );

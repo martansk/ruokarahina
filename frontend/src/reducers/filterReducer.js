@@ -8,7 +8,7 @@ const filterSlice = createSlice({
             return action.payload;
         },
         removeFilter(state, action) {
-            return'';
+            return '';
         }
     }
 });

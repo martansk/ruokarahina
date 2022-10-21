@@ -38,71 +38,42 @@ const App = () => {
     </div>
   );
 
-  if (player.length === 2) return (
-    <div className="App">
-    
-    <div className='player-details'>
-    <div className='right'>
-      <PlayerInfo 
-        x={'1'}
-        name={player[0].name} 
-        energyKcal={player[0].energyKcal}
-        carbohydrate={player[0].carbohydrate}
-        protein={player[0].protein}
-        fat={player[0].fat}
-        />
-    </div>
-    
-    <div className='left'>
-      <PlayerInfo 
-        x={'2'}
-        name={player[1].name} 
-        energyKcal={player[1].energyKcal}
-        carbohydrate={player[1].carbohydrate}
-        protein={player[1].protein}
-        fat={player[1].fat}
-      />
-
-    </div>
-    </div>
-    
-    <div class='startBattle'>
-      <button onClick={() => startBattle()}>Aloita taistelu</button>
-    </div>
-    
-    </div>
-  )
-
-  if (player.length === 1) return (
-    <div className="App">  
-      
-      <div className='player-details'>
-      <div className='right'>
-        <PlayerInfo 
-          x={'1'}
-          name={player[0].name} 
-          energyKcal={player[0].energyKcal}
-          carbohydrate={player[0].carbohydrate}
-          protein={player[0].protein}
-          fat={player[0].fat}
-        />  
-      </div>
-
-      <div className='left'>
-        <PlayerSelection x={'2'} /> 
-      </div>
-      </div>
-
-    </div>
-  );
-
   return (
-    <div className='App'>   
+    <div className='App'>
 
       <div className='player-details'>
       <div className='left'>
-        <PlayerSelection x={'1'} />
+        {Object.keys(player[0]).length === 0 ? 
+          <PlayerSelection nro={1} x={'1'} /> :
+          <PlayerInfo 
+            x={'1'}
+            name={player[0].name} 
+            energyKcal={player[0].energyKcal}
+            carbohydrate={player[0].carbohydrate}
+            protein={player[0].protein}
+            fat={player[0].fat}
+            id={player[0].id}
+          />}
       </div>
+
+      <div className='right'>
+        {Object.keys(player[1]).length === 0 ?
+          <PlayerSelection nro={2} x={'2'} /> :
+          <PlayerInfo 
+            x={'2'}
+            name={player[1].name} 
+            energyKcal={player[1].energyKcal}
+            carbohydrate={player[1].carbohydrate}
+            protein={player[1].protein}
+            fat={player[1].fat}
+            id={player[1].id}
+          />}
+      </div>
+      </div>
+      <div className='startBattle'>
+      {Object.values(player).length === 2 ? 
+        <button onClick={() => startBattle()}>Aloita taistelu</button> :
+        <></>}
       </div>
 
     </div>

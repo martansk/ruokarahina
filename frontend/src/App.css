@@ -1,10 +1,24 @@
+.intro-box {
+  text-align: center;
+  background-color: rgb(91, 35, 51);
+  color: rgb(247, 244, 243);
+}
+
 .App {
   text-align: center;
+  background-color: rgb(247, 244, 243);
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  border: solid rgb(91, 35, 51);
 }
 
 .player-details {
   display: flex;
   flex-direction: row;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
 }
 
 .left {
@@ -15,8 +29,50 @@
   width: 50%;
 }
 
+.search-container {
+  display: flex;
+  flex-direction: column;
+  width:220px;
+  margin-left:25%;
+  margin-right: 25%;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  height: 60vh;
+  overflow: auto;
+}
+
+.dropdown:empty {
+  border:none;
+}
+
+.dropdown-line {
+  cursor: pointer;
+  text-align: start;
+  margin: 2px 0;
+}
+
+.dropdown-line:hover {
+  background-color: aqua;
+}
+
+input {
+  width: 100%;
+}
+
 .battle {
   margin: 1em;
+}
+
+.inner-container {
+  display: flex;
+}
+
+.footer {
+  text-align: center;
 }
 
 .App-logo {
