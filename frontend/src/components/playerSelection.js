@@ -17,23 +17,17 @@ const PlayerSelection = (props) => {
     const [ data, setData ] = useState([]);
     
     const url = 'http://localhost:3001/api/food/';
-    
-    //const data = useSelector((state) => state.data);
-    //const filter = useSelector((state) => state.filter);
-
 
     const findFoods = (filter) => {
         try {
-            //if (filter === '') dispatch(removeData()) // if there's no filter, show no data
-            //else {
+            if (filter === '') setData([]); // if there's no filter, show no data
+            else {
                 axios
                     .get(url + filter) //e.g. .../api/food/omen
                     .then(response => {
-                    //dispatch(addData(response.data));
                     setData(response.data);
                 });
-            //}
-            //dispatch(addFilter(filter));
+            }
             setFilter(filter);
         } catch (e) {
             console.log(e.message);
@@ -53,8 +47,6 @@ const PlayerSelection = (props) => {
     const selectPlayer = (id) => {
         const playerObject = findByID(data, id);
         dispatch(addPlayer( [ playerObject[0], props.nro-1 ]));
-        //dispatch(removeFilter());
-        //dispatch(removeData());
         setFilter('');
         setData([]);
     };
@@ -74,13 +66,14 @@ const PlayerSelection = (props) => {
         <form>
         
         <div className="player-label">
-            <label>Valitse {props.x}. pelaaja:</label>
+            <label><b>Valitse {props.x}. pelaaja:</b></label>
         </div>
 
         <div className="inner-container">
         <input
             value={filter}
-            onChange={handleFind} />
+            onChange={handleFind}
+            placeholder='Hae ruoan nimellä' />
         </div>
         </form>
         <div className="dropdown">

@@ -10,7 +10,7 @@ const playerSlice = createSlice({
             return state;
         },
         removePlayer(state, action) {
-            return [];
+            return { 0: {}, 1:{} };
         },
         // removes player by id
         removeOnePlayer(state, action) {

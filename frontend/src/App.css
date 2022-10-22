@@ -1,46 +1,59 @@
+html {
+  background-color: rgb(251, 99, 118);
+  font-family: 'Courier New', Courier, monospace;
+}
+
 .intro-box {
   text-align: center;
-  background-color: rgb(91, 35, 51);
-  color: rgb(247, 244, 243);
+  background-color: rgb(93, 42, 66);
+  color: rgb(255, 249, 249);
 }
 
 .App {
   text-align: center;
-  background-color: rgb(247, 244, 243);
+  background-color: rgb(255, 249, 249);
   margin-top: 5vh;
   margin-bottom: 5vh;
   margin-left: 10vw;
   margin-right: 10vw;
-  border: solid rgb(91, 35, 51);
+  border: solid rgb(93, 42, 66);
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  height: 80vh;
+  line-height: 1.5;
 }
 
 .player-details {
   display: flex;
   flex-direction: row;
+}
+
+.left, .right {
+  width: 50%;
+  border: 1px solid rgb(86, 77, 74);
   margin-top: 2vh;
   margin-bottom: 2vh;
-}
-
-.left {
-  width: 50%;
-}
-
-.right {
-  width: 50%;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  padding-top: 2vh;
 }
 
 .search-container {
   display: flex;
   flex-direction: column;
-  width:220px;
   margin-left:25%;
   margin-right: 25%;
+}
+
+.player-label {
+  text-align: left;
+  margin-bottom: 1vh;
 }
 
 .dropdown {
   display: flex;
   flex-direction: column;
-  border: 1px solid gray;
+  border: 1px solid rgb(86, 77, 74);
   height: 60vh;
   overflow: auto;
 }
@@ -56,11 +69,15 @@
 }
 
 .dropdown-line:hover {
-  background-color: aqua;
+  background-color: rgb(255, 220, 204);
 }
 
 input {
   width: 100%;
+}
+
+.player-info {
+  padding: 10%;
 }
 
 .battle {

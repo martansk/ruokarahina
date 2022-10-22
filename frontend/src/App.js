@@ -70,10 +70,11 @@ const App = () => {
           />}
       </div>
       </div>
+
       <div className='startBattle'>
-      {Object.values(player).length === 2 ? 
+      {Object.keys(player[0]).length !== 0 && Object.keys(player[1]).length !== 0 ? 
         <button onClick={() => startBattle()}>Aloita taistelu</button> :
-        <></>}
+        <button disabled>Aloita taistelu</button>}
       </div>
 
     </div>
