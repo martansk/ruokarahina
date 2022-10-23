@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import axios from "axios";
-import { useDispatch } from 'react-redux'
-import { addPlayer } from "../reducers/playerReducer";
+/* eslint-disable react/prop-types */
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { addPlayer } from '../reducers/playerReducer';
 
 /**
  * 
@@ -25,8 +26,8 @@ const PlayerSelection = (props) => {
                 axios
                     .get(url + filter) //e.g. .../api/food/omen
                     .then(response => {
-                    setData(response.data);
-                });
+                        setData(response.data);
+                    });
             }
             setFilter(filter);
         } catch (e) {
@@ -40,8 +41,8 @@ const PlayerSelection = (props) => {
 
     const findByID = (foodObject, id) => {
         return foodObject.filter((foodObject) => {
-          return foodObject['id'] === id;
-        })
+            return foodObject['id'] === id;
+        });
     };
 
     const selectPlayer = (id) => {
@@ -52,7 +53,7 @@ const PlayerSelection = (props) => {
     };
 
     const results = (data) => {
-        if (data.length > 100) return "Liikaa hakutuloksia, anna tarkemmat hakuehdot.";
+        if (data.length > 100) return 'Liikaa hakutuloksia, anna tarkemmat hakuehdot.';
         else return data.map(data => 
             <div className="dropdown-line" key={data.id} onClick={() => selectPlayer(data.id)}> {data.name.fi}</div>
         );
@@ -62,24 +63,24 @@ const PlayerSelection = (props) => {
       
         <div className="search-container">
       
-        <form>
+            <form>
         
-        <div className="player-label">
-            <label><b>Valitse {props.x}. pelaaja:</b></label>
-        </div>
+                <div className="player-label">
+                    <label><b>Valitse {props.x}. pelaaja:</b></label>
+                </div>
 
-        <div className="inner-container">
-        <input
-            value={filter}
-            onChange={handleFind}
-            placeholder='Hae ruoan nimellä' />
-        </div>
-        </form>
-        <div className="dropdown">
-        {results(data)}
-        </div>
+                <div className="inner-container">
+                    <input
+                        value={filter}
+                        onChange={handleFind}
+                        placeholder='Hae ruoan nimellä' />
+                </div>
+            </form>
+            <div className="dropdown">
+                {results(data)}
+            </div>
 
-        <div className='image-container'></div>
+            <div className='image-container'></div>
 
         </div>
     );

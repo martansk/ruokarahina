@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const dataSlice = createSlice({
     name: 'data',
@@ -7,6 +7,7 @@ const dataSlice = createSlice({
         addData(state, action) {
             return action.payload;
         },
+        // eslint-disable-next-line no-unused-vars
         removeData(state, action) {
             return [];
         }

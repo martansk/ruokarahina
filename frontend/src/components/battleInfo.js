@@ -1,8 +1,8 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import BattleLine from "./battleLine";
-import BattleHeader from "./battleHeader";
-import NewButton from "./newBattle";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import BattleLine from './battleLine';
+import BattleHeader from './battleHeader';
+import NewButton from './newBattle';
 
 /**
  * Component for battle description.
@@ -39,21 +39,22 @@ const BattleInfo = () => {
             <div>0 s. Taistelu alkaa</div>
         
             {Object.entries(battle).map((entry) => {
+                // eslint-disable-next-line no-unused-vars
                 const [key, value] = entry;
                 return <BattleLine key={value.turn.time} 
                     turn={value.turn} 
                     attacker={value.turn.attacker.fi === value.player1.name.fi ? value.player1 : value.player2} 
                     defender={value.turn.attacker.fi !== value.player1.name.fi ? value.player1 : value.player2}
-                />})
+                />;})
             }
 
-        {/* Winner details */}
-        <div>{Object.values(battle).at(-1).turn.attacker.fi} voitti taistelun!</div>
+            {/* Winner details */}
+            <div>{Object.values(battle).at(-1).turn.attacker.fi} voitti taistelun!</div>
         
-        {/* Start a new battle */}
-        <NewButton />
+            {/* Start a new battle */}
+            <NewButton />
 
-       </div>
+        </div>
     );
 };
 

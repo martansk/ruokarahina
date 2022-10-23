@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const filterSlice = createSlice({
     name: 'filter',
@@ -7,6 +7,7 @@ const filterSlice = createSlice({
         addFilter(state, action) {
             return action.payload;
         },
+        // eslint-disable-next-line no-unused-vars
         removeFilter(state, action) {
             return '';
         }

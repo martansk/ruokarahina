@@ -1,14 +1,14 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { removeData } from "../reducers/dataReducer";
-import { removeFilter } from "../reducers/filterReducer";
-import { removePlayer } from "../reducers/playerReducer";
-import { removeBattle } from "../reducers/battleReducer";
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { removeData } from '../reducers/dataReducer';
+import { removeFilter } from '../reducers/filterReducer';
+import { removePlayer } from '../reducers/playerReducer';
+import { removeBattle } from '../reducers/battleReducer';
 
 
 const NewButton = () => {
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     /**
      * Clears the redux store for next battle.

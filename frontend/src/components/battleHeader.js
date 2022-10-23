@@ -1,9 +1,11 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+import React from 'react';
 
 /**
  * Header for battle.
  */
 const BattleHeader = (props) => {
+
     return (
         <div>
             <div>{props.player1.name.fi} VS. {props.player2.name.fi}</div>

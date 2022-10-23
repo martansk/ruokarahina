@@ -1,6 +1,7 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { removeOnePlayer } from "../reducers/playerReducer";
+/* eslint-disable react/prop-types */
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { removeOnePlayer } from '../reducers/playerReducer';
 
 /**
  * Player details component.
@@ -27,7 +28,7 @@ const PlayerInfo = (props) => {
                 <div>Rasva: {Math.round(props.fat * 10) / 10}</div>
             </div>
             <div className="image-container"></div>
-                <button onClick={() => removePlayer(props.x)}>Vaihda pelaajaa</button>
+            <button onClick={() => removePlayer(props.x)}>Vaihda pelaajaa</button>
         </div>
     );
 };

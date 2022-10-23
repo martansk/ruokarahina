@@ -4,7 +4,7 @@ describe('Ruokarahina app', function() {
     });
 
     it('front page opens', function() {
-        cy.contains('Valitse 1. pelaaja:')
+        cy.contains('Valitse 1. pelaaja:');
         cy.contains('Valitse 2. pelaaja:');
     });
 
@@ -21,7 +21,7 @@ describe('Ruokarahina app', function() {
         cy.get('input:first').type('banaani');
         cy.contains('Banaani, kuorittu').click();
         cy.get('button:last').should('be.disabled');
-    })
+    });
 
     describe('Players have been selected', function() {
         beforeEach(function() {

@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 const playerSlice = createSlice({
     name: 'player',
@@ -9,6 +9,7 @@ const playerSlice = createSlice({
             state[action.payload[1]] = action.payload[0];
             return state;
         },
+        // eslint-disable-next-line no-unused-vars
         removePlayer(state, action) {
             return { 0: {}, 1:{} };
         },
