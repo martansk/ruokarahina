@@ -54,12 +54,11 @@ const PlayerSelection = (props) => {
     const results = (data) => {
         if (data.length > 100) return "Liikaa hakutuloksia, anna tarkemmat hakuehdot.";
         else return data.map(data =>
-        <div className="dropdown-line" key={data.id} onClick={() => selectPlayer(data.id)}> {data.name.fi}</div>
+        <div className="dropdown-line" data-testid='dropdown-line' key={data.id} onClick={() => selectPlayer(data.id)}> {data.name.fi}</div>
         );
     };
     
     return (
-        <div>
       
         <div className="search-container">
       
@@ -76,11 +75,12 @@ const PlayerSelection = (props) => {
             placeholder='Hae ruoan nimellä' />
         </div>
         </form>
-        <div className="dropdown">
+        <div className="dropdown" data-testid='dropdown' >
         {results(data)}
         </div>
-        </div>
-  
+
+        <div className='image-container'></div>
+
         </div>
     );
 };
