@@ -11,21 +11,21 @@ const foodService = require('../services/foodService');
 const regex = /(^[a-zA-Zäö]+$)|(^\d*$)/; // search query may contain only numbers or characters
 
 module.exports = {
-    findFood: async (req, res) => {
-        if (!req.params.food) {
-            res.status(400).send('Ei ruoan nimeä tai id:tä, jota etsiä');
-        }
-        else if (!req.params.food.match(regex)) {
-            res.status(400).send('non-valid input');
-        }
-        else {
-            try {
-                const response = await foodService.searchFood(req.params.food);
-                res.send(response);
-            } catch (e) {
-                res.send(e.message);
-            }
-        }
-            
+  findFood: async (req, res) => {
+    if (!req.params.food) {
+      res.status(400).send('Ei ruoan nimeä tai id:tä, jota etsiä');
     }
+    else if (!req.params.food.match(regex)) {
+      res.status(400).send('non-valid input');
+    }
+    else {
+      try {
+        const response = await foodService.searchFood(req.params.food);
+        res.send(response);
+      } catch (e) {
+        res.send(e.message);
+      }
+    }
+            
+  }
 };
