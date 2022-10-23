@@ -104,11 +104,29 @@ input {
 
 .player-info {
   height: 45%;
-  
+}
+
+.player-table {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .battle {
-  margin: 1em;
+  margin: 2%;
+  text-align: center;
+  overflow: auto;
+  height: 90%;
+}
+
+.battle-header {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.battle-table {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
 }
 
 .inner-container {

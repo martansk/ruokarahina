@@ -22,13 +22,17 @@ const PlayerInfo = (props) => {
             <div className="player-info">
                 <div>{props.x}. pelaaja</div>
                 <div><b>{props.name.fi}</b></div>
-                <div>Energia: {Math.round(props.energyKcal * 10) / 10}</div>
-                <div>Hiilihydraatit: {Math.round(props.carbohydrate * 10) / 10}</div>
-                <div>Proteiinit: {Math.round(props.protein * 10) / 10}</div>
-                <div>Rasva: {Math.round(props.fat * 10) / 10}</div>
+                <table className='player-table'>
+                    <tr><td>Energia:</td> <td>{Math.round(props.energyKcal * 10) / 10}</td></tr>
+                    <tr><td>Hiilihydraatit:</td> <td>{Math.round(props.carbohydrate * 10) / 10}</td></tr>
+                    <tr><td>Proteiinit:</td> <td>{Math.round(props.protein * 10) / 10}</td></tr>
+                    <tr><td>Rasva:</td> <td>{Math.round(props.fat * 10) / 10}</td></tr>
+                </table>
+                <div>
+                    <button onClick={() => removePlayer(props.x)}>Vaihda pelaajaa</button>
+                </div>
             </div>
             {/*<div className="image-container"></div>*/}
-            <button onClick={() => removePlayer(props.x)}>Vaihda pelaajaa</button>
         </div>
     );
 };
