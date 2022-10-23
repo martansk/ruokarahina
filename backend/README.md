@@ -1,4 +1,4 @@
-# backend metodit:
+# API metodit:
 GET http://localhost:3001/api/food/omena
 Ruokien hakuominaisuus. Palauttaa kaikki ruoka-aineet, joiden nimessä on omena.
 
