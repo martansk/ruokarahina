@@ -13,7 +13,7 @@ const playerSlice = createSlice({
         removePlayer(state, action) {
             return { 0: {}, 1:{} };
         },
-        // removes player by id
+        // removes player by component "id"
         removeOnePlayer(state, action) {
             state[action.payload] = {};
             return state;

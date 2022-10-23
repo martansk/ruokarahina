@@ -18,7 +18,10 @@
     "nodemon": "^2.0.20"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
     "cross-env": "^7.0.3",
+    "deep-freeze": "^0.0.1",
     "eslint": "^8.26.0",
     "jest": "^29.2.0",
     "supertest": "^6.3.0"
