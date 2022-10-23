@@ -37,7 +37,7 @@ const BattleInfo = () => {
         
             <table className='battle-table'>
                 {/* Battle begins */}
-                <tr><td>0 s.</td><td>Taistelu alkaa.</td></tr>
+                <tr><td><b>0 s.</b></td><td>Taistelu alkaa.</td></tr>
                 {Object.entries(battle).map((entry) => {
                 // eslint-disable-next-line no-unused-vars
                     const [key, value] = entry;
@@ -50,7 +50,7 @@ const BattleInfo = () => {
             </table>
 
             {/* Winner details */}
-            <div>{Object.values(battle).at(-1).turn.attacker.fi} voitti taistelun!</div>
+            <div className='winner-details'><h3>{Object.values(battle).at(-1).turn.attacker.fi} voitti taistelun!</h3></div>
         
             {/* Start a new battle */}
             <NewButton />

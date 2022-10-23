@@ -9,7 +9,7 @@ import React from 'react';
  */
 const BattleLine = (props) => {
     return (
-        <tr><td>{Math.round(props.turn.time * 10 ) / 10} s.</td><td>{props.attacker.name.fi} lyö ja tekee {Math.round(props.attacker.carbohydrate * 10) / 10} vahinkoa. {props.defender.name.fi} jäi {Math.round(props.defender.energyKcal * 10) / 10} health.</td></tr>
+        <tr><td><b>{Math.round(props.turn.time * 10 ) / 10} s.</b></td><td><i>{props.attacker.name.fi}</i> lyö ja tekee <b>{Math.round(props.attacker.carbohydrate * 10) / 10}</b> vahinkoa. <i>{props.defender.name.fi}</i> jäi <b>{Math.round(props.defender.energyKcal * 10) / 10} health.</b></td></tr>
     );
 };
 
