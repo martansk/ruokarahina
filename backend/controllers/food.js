@@ -8,7 +8,7 @@ const foodService = require('../services/foodService');
 * Fineli API toimii samalla sekä nimellä että id:llä.
 */
 
-const regex = /(^[a-zA-Z]+$)|(^\d*$)/; // search query may contain only numbers or characters
+const regex = /(^[a-zA-Zäö]+$)|(^\d*$)/; // search query may contain only numbers or characters
 
 module.exports = {
     findFood: async (req, res) => {
