@@ -1,24 +1,24 @@
-import playerReducer from "./playerReducer";
-import deepFreeze from "deep-freeze";
+import playerReducer from './playerReducer';
+import deepFreeze from 'deep-freeze';
 
 describe('playerReducer', () => {
     //{ type:'player/addPlayer', payload: [ playeroobject, 0 ] }
     test('returns new state with action player/addPlayer', () => {
-    const state = { 0: {}, 1:{} };
-    const playerObject = {
-        'name': 'porkkana',
-        'energyKcal': 33
-    };
-    const action = {
-        type: 'player/addPlayer',
-        payload: [ playerObject, 0 ]
-    };
+        const state = { 0: {}, 1:{} };
+        const playerObject = {
+            'name': 'porkkana',
+            'energyKcal': 33
+        };
+        const action = {
+            type: 'player/addPlayer',
+            payload: [ playerObject, 0 ]
+        };
 
-    deepFreeze(state);
-    const newState = playerReducer(state, action);
+        deepFreeze(state);
+        const newState = playerReducer(state, action);
 
-    expect(newState).toHaveProperty('0', playerObject);
-    expect(newState).toHaveProperty('1', {});
+        expect(newState).toHaveProperty('0', playerObject);
+        expect(newState).toHaveProperty('1', {});
     });
 
     test('returns new state with action player/removePlayer', () => {

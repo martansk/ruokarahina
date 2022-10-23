@@ -33,9 +33,27 @@ html {
   border: 1px solid black;
   margin: 2%;
   max-height: 96%;
+  position: relative;
+}
+
+.left::before, .right::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: url('plate-gfdd9a4f35_1280.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.6;
 }
 
 .search-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-left:25%;

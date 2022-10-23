@@ -3,11 +3,12 @@ module.exports = {
         'browser': true,
         'es2021': true,
         'node': true,
-        'jest/globals':true
+        'jest/globals': true
     },
     'extends': [
         'eslint:recommended',
-        'plugin:react/recommended'
+        'plugin:react/recommended',
+        'plugin:jest/recommended'
     ],
     'overrides': [
     ],
@@ -16,7 +17,7 @@ module.exports = {
         'sourceType': 'module'
     },
     'plugins': [
-        'react'
+        'react', 'jest'
     ],
     'rules': {
         'indent': [

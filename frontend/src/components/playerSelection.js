@@ -60,7 +60,7 @@ const PlayerSelection = (props) => {
     };
     
     return (
-      
+        
         <div className="search-container">
       
             <form>
@@ -80,7 +80,7 @@ const PlayerSelection = (props) => {
                 {results(data)}
             </div>
 
-            <div className='image-container'></div>
+            {/*<div className='image-container'></div>*/}
 
         </div>
     );

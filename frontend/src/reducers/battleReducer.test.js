@@ -1,5 +1,5 @@
-import battleReducer from "./battleReducer";
-import deepFreeze from "deep-freeze";
+import battleReducer from './battleReducer';
+import deepFreeze from 'deep-freeze';
 
 describe('battleReducer', () => {
     test('returns new state with action battle/addBattle', () => {
