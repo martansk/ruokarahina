@@ -1,5 +1,5 @@
-# Ruokarahina - Solidabis koodihaaste 2022
-Sovelluksessa käyttäjä voi valita haluamansa ruoka-aineet taisteluun. Tämän jälkeen käyttäjälle näytetään ottelun kulku.
+# Ruokarähinä - Solidabis koodihaaste 2022
+Ruokarähinä-sovelluksessa käyttäjä voi valita haluamansa ruoka-aineet taisteluun. Tämän jälkeen käyttäjälle näytetään ottelun kulku.
 
 Sovelluksen backend on toteutettu docker microservicenä node.js:n ja expressin avulla. Backendissä suoritetaan ruoka-aineiden haku Fineli API:a käyttäen ja taistelulogiikka. API:n testaamiseen on käytetty Jest ja SuperTest-kirjastoja.
 
