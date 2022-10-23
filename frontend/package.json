@@ -20,7 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress:open": "cypress open"
   },
   "eslintConfig": {
     "extends": [
@@ -41,6 +42,8 @@
     ]
   },
   "devDependencies": {
-    "deep-freeze": "^0.0.1"
+    "cypress": "^10.10.0",
+    "deep-freeze": "^0.0.1",
+    "eslint-plugin-cypress": "^2.12.1"
   }
 }
