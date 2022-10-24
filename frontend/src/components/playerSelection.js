@@ -55,28 +55,28 @@ const PlayerSelection = (props) => {
     const results = (data) => {
         if (data.length > 100) return 'Liikaa hakutuloksia, anna tarkemmat hakuehdot.';
         else return data.map(data => 
-            <div className="dropdown-line" key={data.id} onClick={() => selectPlayer(data.id)}> {data.name.fi}</div>
+            <div className='dropdown-line' key={data.id} onClick={() => selectPlayer(data.id)}> {data.name.fi}</div>
         );
     };
     
     return (
         
-        <div className="search-container">
+        <div className='search-container'>
       
             <form>
         
-                <div className="player-label">
+                <div className='player-label'>
                     <label><b>Valitse {props.x}. pelaaja:</b></label>
                 </div>
 
-                <div className="inner-container">
+                <div className='inner-container'>
                     <input
                         value={filter}
                         onChange={handleFind}
                         placeholder='Hae ruoan nimellä' />
                 </div>
             </form>
-            <div className="dropdown">
+            <div className='dropdown'>
                 {results(data)}
             </div>
 

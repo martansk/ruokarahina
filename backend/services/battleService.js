@@ -69,11 +69,7 @@ module.exports = {
     const player1 = new Player(payload.player1);
     const player2 = new Player(payload.player2);
 
-    // if both players have no attack power (=carbohydrate), return empty array
-    if (player1.carbohydrate <= 0 && player2.carbohydrate <= 0) return battleArray;
-
     const turn = new Turn(0.0, '');
-    //battleArray.push(JSON.parse(JSON.stringify({ turn, player1, player2 })));
 
     while (player1.energyKcal > 0 && player2.energyKcal > 0) {
       createNextTurn(turn, player1, player2);

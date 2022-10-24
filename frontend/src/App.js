@@ -14,7 +14,8 @@ const App = () => {
     const battle = useSelector((state) => state.battle[0]);
     const player = useSelector((state) => state.players);
 
-    const battle_url = 'http://localhost:3001/api/battle/initialize';
+    const base_url = process.env.API_BASE_URL || 'http://localhost:3001';
+    const battle_api = '/api/battle/initialize';
 
     /**
      * Calls the battle backend, which return the battle details as a response.
@@ -25,7 +26,7 @@ const App = () => {
             player1: player[0],
             player2: player[1]
         };
-        axios.post(battle_url, body)
+        axios.post((base_url + battle_api), body)
             .then(response => {
                 dispatch(addBattle(response.data));
             });

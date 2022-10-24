@@ -18,8 +18,8 @@ const PlayerInfo = (props) => {
     };
 
     return (
-        <div className="search-container">
-            <div className="player-info">
+        <div className='search-container'>
+            <div className='player-info'>
                 <div>{props.x}. pelaaja</div>
                 <div><b>{props.name.fi}</b></div>
                 <table className='player-table'>

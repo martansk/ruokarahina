@@ -85,4 +85,24 @@ describe('Battle API endpoints', () => {
     expect(response.status).toEqual(200);
     expect(response.body).toHaveLength(0);
   });
+
+  it('player is missing stats', async() => {
+    const body = {
+      player1: {
+        name: 'Porkkana1',
+        energyKcal: 33,
+        protein: 0.6,
+        fat: 0.2
+      },
+      player2: {
+        name: 'Porkkana2',
+        energyKcal: 33,
+        carbohydrate: 0.0,
+        protein: 0.6,
+        fat: 0.2
+      }
+    };
+    const response = await api.post(endpoint).send(body);
+    expect(response.status).toEqual(400);
+  });
 });
