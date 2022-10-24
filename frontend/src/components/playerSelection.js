@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { addPlayer } from '../reducers/playerReducer';
+import PropTypes from 'prop-types';
 
 /**
  * 
@@ -84,6 +84,11 @@ const PlayerSelection = (props) => {
 
         </div>
     );
+};
+
+PlayerSelection.propTypes = {
+    x: PropTypes.string,
+    nro: PropTypes.number
 };
 
 export default PlayerSelection;

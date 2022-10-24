@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { removeOnePlayer } from '../reducers/playerReducer';
+import PropTypes from 'prop-types';
 
 /**
  * Player details component.
@@ -32,9 +32,19 @@ const PlayerInfo = (props) => {
                     <button onClick={() => removePlayer(props.x)}>Vaihda pelaajaa</button>
                 </div>
             </div>
-            {/*<div className="image-container"></div>*/}
         </div>
     );
+};
+
+PlayerInfo.propTypes = {
+    x: PropTypes.string,
+    name: PropTypes.shape({
+        fi: PropTypes.string
+    }),
+    energyKcal: PropTypes.number,
+    carbohydrate: PropTypes.carbohydrate,
+    protein: PropTypes.protein,
+    fat: PropTypes.fat
 };
 
 export default PlayerInfo;

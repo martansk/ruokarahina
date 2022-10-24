@@ -13,6 +13,9 @@ module.exports = {
     'overrides': [
     ],
     'parserOptions': {
+        'ecmaFeatures': {
+            'jsx': true
+        },
         'ecmaVersion': 'latest',
         'sourceType': 'module'
     },
