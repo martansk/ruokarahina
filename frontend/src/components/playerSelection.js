@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { addPlayer } from '../reducers/playerReducer';
 import PropTypes from 'prop-types';
 
+
 /**
  * 
  * Component for searching and selecting players.
@@ -17,7 +18,7 @@ const PlayerSelection = (props) => {
     const [ filter, setFilter ] = useState('');
     const [ data, setData ] = useState([]);
     
-    const url = 'http://localhost:3001/api/food/';
+    const url = process.env.REACT_APP_API_BASE_URL ? process.env.REACT_APP_API_BASE_URL + '/api/food/' : '/api/food/';
 
     const findFoods = (filter) => {
         try {

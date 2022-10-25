@@ -36,17 +36,19 @@ const BattleInfo = () => {
             <BattleHeader player1={player[0]} player2={player[1]} />
         
             <table className='battle-table'>
-                {/* Battle begins */}
-                <tr><td><b>0 s.</b></td><td>Taistelu alkaa.</td></tr>
-                {Object.entries(battle).map((entry) => {
-                // eslint-disable-next-line no-unused-vars
-                    const [key, value] = entry;
-                    return <BattleLine key={value.turn.time} 
-                        turn={value.turn} 
-                        attacker={value.turn.attacker.fi === value.player1.name.fi ? value.player1 : value.player2} 
-                        defender={value.turn.attacker.fi !== value.player1.name.fi ? value.player1 : value.player2}
-                    />;})
-                }
+                <tbody>
+                    {/* Battle begins */}
+                    <tr><td><b>0 s.</b></td><td>Taistelu alkaa.</td></tr>
+                    {Object.entries(battle).map((entry) => {
+                        // eslint-disable-next-line no-unused-vars
+                        const [key, value] = entry;
+                        return <BattleLine key={value.turn.time} 
+                            turn={value.turn} 
+                            attacker={value.turn.attacker.fi === value.player1.name.fi ? value.player1 : value.player2} 
+                            defender={value.turn.attacker.fi !== value.player1.name.fi ? value.player1 : value.player2}
+                        />;})
+                    }
+                </tbody>
             </table>
 
             {/* Winner details */}

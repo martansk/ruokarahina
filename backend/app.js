@@ -9,5 +9,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cors());
 app.use('/api/', routes);
+app.use(express.static('build'))
 
 module.exports = app;

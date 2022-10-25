@@ -5,7 +5,6 @@ const playerSlice = createSlice({
     initialState: { 0: {}, 1:{} },
     reducers: {
         addPlayer(state, action) {
-            console.log(action.payload);
             state[action.payload[1]] = action.payload[0];
             return state;
         },

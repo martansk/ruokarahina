@@ -23,10 +23,12 @@ const PlayerInfo = (props) => {
                 <div>{props.x}. pelaaja</div>
                 <div><b>{props.name.fi}</b></div>
                 <table className='player-table'>
-                    <tr><td>Energia:</td> <td>{Math.round(props.energyKcal * 10) / 10}</td></tr>
-                    <tr><td>Hiilihydraatit:</td> <td>{Math.round(props.carbohydrate * 10) / 10}</td></tr>
-                    <tr><td>Proteiinit:</td> <td>{Math.round(props.protein * 10) / 10}</td></tr>
-                    <tr><td>Rasva:</td> <td>{Math.round(props.fat * 10) / 10}</td></tr>
+                    <tbody>
+                        <tr><td>Energia:</td><td>{Math.round(props.energyKcal * 10) / 10}</td></tr>
+                        <tr><td>Hiilihydraatit:</td><td>{Math.round(props.carbohydrate * 10) / 10}</td></tr>
+                        <tr><td>Proteiinit:</td><td>{Math.round(props.protein * 10) / 10}</td></tr>
+                        <tr><td>Rasva:</td><td>{Math.round(props.fat * 10) / 10}</td></tr>
+                    </tbody>
                 </table>
                 <div>
                     <button onClick={() => removePlayer(props.x)}>Vaihda pelaajaa</button>
@@ -42,9 +44,9 @@ PlayerInfo.propTypes = {
         fi: PropTypes.string
     }),
     energyKcal: PropTypes.number,
-    carbohydrate: PropTypes.carbohydrate,
-    protein: PropTypes.protein,
-    fat: PropTypes.fat
+    carbohydrate: PropTypes.number,
+    protein: PropTypes.number,
+    fat: PropTypes.number
 };
 
 export default PlayerInfo;

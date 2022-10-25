@@ -31,6 +31,8 @@ Ja käynnistä backend komennolla
 npm start
 ```
 
+Tämän jälkeen backend on saatavilla osoitteessa http://localhost:8080
+
 Testit voi ajaa komennolla
 ```
 npm test
@@ -43,6 +45,8 @@ Asenna tarvittavat kirjastot
 npm install
 ```
 
+
+
 Käynnistä sovellus
 ```
 npm start
@@ -53,6 +57,11 @@ Sovellus aukeaa osoitteeseen http://localhost:3000/
 Tilanhallinnan yksikkötestit voi ajaa komennolla
 ```
 npm test
+```
+
+Sovelluksen voi buildata komennolla
+```
+npm run build
 ```
 
 ## Lisätietoa
