@@ -4,9 +4,9 @@ const IntroBox = () => {
     return (
         <div className='intro-box'>
             
-            <h1>RUOKARÄHINÄ 2022</h1>
+            <h1>Ruokarähinä</h1>
             
-            <i>On aika selvittää lautasesi todellinen sankari...</i>
+            <h2>On aika selvittää lautasesi todellinen sankari...</h2>
 
         </div>
     );
