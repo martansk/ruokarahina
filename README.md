@@ -5,6 +5,8 @@ Sovelluksen backend on toteutettu docker microservicenä node.js:n ja expressin 
 
 Sovelluksen frontend on toteutettu Reactilla. Sovelluksen tilan hallinta on toteutettu Redux Toolkit-kirjastoa käyttäen. Yksikkötestit on suoritettu Jestillä ja end-to-end testit Cypressilla.
 
+Voit halutessasi tutustua sovellukseen osoitteessa: https://ruokarahina.fly.dev/
+
 ## Ohjeet
 
 Kloonaa repo komennolla
