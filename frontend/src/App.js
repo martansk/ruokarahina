@@ -14,8 +14,8 @@ const App = () => {
     const battle = useSelector((state) => state.battle[0]);
     const player = useSelector((state) => state.players);
 
-    const battle_api = process.env.REACT_APP_API_BASE_URL + '/api/battle/initialize';
-    //const battle_api = '/api/battle/initialize';
+    //const battle_api = process.env.REACT_APP_API_BASE_URL + '/api/battle/initialize';
+    const battle_api = '/api/battle/initialize';
 
     /**
      * Calls the battle backend, which return the battle details as a response.
