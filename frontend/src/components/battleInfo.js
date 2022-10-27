@@ -52,7 +52,7 @@ const BattleInfo = () => {
             </table>
 
             {/* Winner details */}
-            <div className='winner-details'><h3>{Object.values(battle).at(-1).turn.attacker.fi} voitti taistelun!</h3></div>
+            <div className='winner-details'><b>{Object.values(battle).at(-1).turn.attacker.fi} voitti taistelun!</b></div>
         
             {/* Start a new battle */}
             <NewButton />

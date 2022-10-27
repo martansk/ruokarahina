@@ -56,7 +56,7 @@ const PlayerSelection = (props) => {
     const results = (data) => {
         if (data.length > 100) return 'Liikaa hakutuloksia, anna tarkemmat hakuehdot.';
         else return data.map(data => 
-            <div className='dropdown-line' key={data.id} onClick={() => selectPlayer(data.id)}> {data.name.fi}</div>
+            <div className='dropdown-line' key={data.id+props.x} onClick={() => selectPlayer(data.id)}>{data.name.fi}</div>
         );
     };
     

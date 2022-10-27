@@ -7,9 +7,29 @@ import PropTypes from 'prop-types';
 const BattleHeader = (props) => {
 
     return (
-        <div className='battle-header'>
-            <div className='vs-header'><h3>{props.player1.name.fi} VS. {props.player2.name.fi}</h3></div>
-            <div className='health-header'>{props.player1.name.fi} health <b>{Math.round(props.player1.energyKcal * 10) / 10}</b>, {props.player2.name.fi} health <b>{Math.round(props.player2.energyKcal * 10) / 10}</b> </div>
+        <div className='header-container'>
+            <div className='versus'>
+                VS
+            </div>
+            <div className='battle-header'>
+                <div className='battle-header-player1'>
+                    <div className='vs-header'>
+                        <h3>{props.player1.name.fi}</h3>
+                    </div>
+                    <div className='health-header'>
+                    Health <b>{Math.round(props.player1.energyKcal * 10) / 10}</b>       
+                    </div>
+                </div>
+                <div className='battle-header-player2'>
+                    <div className='vs-header'>
+                        <h3>{props.player2.name.fi}</h3>
+                    </div>
+                    <div className='health-header'>
+                    Health <b>{Math.round(props.player2.energyKcal * 10) / 10}</b>       
+                    </div>
+                </div>
+            </div>
+
         </div>
     );
 };
