@@ -18,16 +18,23 @@ const PlayerSelection = (props) => {
     const [ filter, setFilter ] = useState('');
     const [ data, setData ] = useState([]);
     
-    const url = process.env.REACT_APP_API_BASE_URL ? process.env.REACT_APP_API_BASE_URL + '/api/food/' : '/api/food/';
+    const url = process.env.REACT_APP_API_BASE_URL + '/api/food/';
+    //const url = '/api/food/name/';
+
+    const regex = /(^[a-zA-Zäö]+$)|(^\d*$)/;
 
     const findFoods = (filter) => {
         try {
             if (filter === '') setData([]); // if there's no filter, show no data
+            if (!filter.match(regex)) setData([]); // if filter is non-valid, show no data
             else {
                 axios
                     .get(url + filter) //e.g. .../api/food/omen
                     .then(response => {
                         setData(response.data);
+                    // eslint-disable-next-line no-unused-vars
+                    }).catch(error => {
+                        setData([]);
                     });
             }
             setFilter(filter);
@@ -54,8 +61,7 @@ const PlayerSelection = (props) => {
     };
 
     const results = (data) => {
-        if (data.length > 100) return 'Liikaa hakutuloksia, anna tarkemmat hakuehdot.';
-        else return data.map(data => 
+        return data.map(data => 
             <div className='dropdown-line' key={data.id+props.x} onClick={() => selectPlayer(data.id)}>{data.name.fi}</div>
         );
     };

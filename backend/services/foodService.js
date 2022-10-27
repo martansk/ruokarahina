@@ -4,7 +4,7 @@ const BASE_URL = 'https://fineli.fi/fineli/api/v1/foods?q='; // searching with f
 /**
  * Calls the Fineli API with the search conditions given by user.
  * 
- * @param {String} foodName The name or ID of the food.
+ * @param {String} foodName The name of the food.
  * @returns Search response as JSON.
  */
 const searchFood = async (foodName) => {
