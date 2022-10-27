@@ -30,7 +30,7 @@ module.exports = {
       res.status(400).send('invalid payload, check players\' stats');
     }
     // if both players have no attack power (=carbohydrate), return empty array
-    if (!checkCarbs(player1) || !checkCarbs(player2)) {
+    if (!checkCarbs(player1) && !checkCarbs(player2)) {
       res.send([]);
     }
     else {

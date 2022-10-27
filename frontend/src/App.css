@@ -15,6 +15,10 @@ h2 {
   font-size: 24px;
 }
 
+h3 {
+  margin-top: 0;
+}
+
 .intro-box {
   text-align: center;
   background-color: rgb(185, 28, 28);
@@ -67,7 +71,7 @@ label {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-left:25%;
+  margin-left: 25%;
   margin-right: 25%;
   height: 77%;
   margin-top: 20%;
@@ -85,7 +89,7 @@ label {
   flex-direction: column;
   border: 1px solid black;
   overflow-y: scroll;
-  height: 50%;
+  height: 80%;
 }
 
 .dropdown:empty {
@@ -96,7 +100,7 @@ label {
 .dropdown-line {
   cursor: pointer;
   text-align: start;
-  margin: 2px 0;
+  padding: 3px;
 }
 
 .dropdown-line:hover {
@@ -112,6 +116,7 @@ input {
   width: 100%;
   box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
 }
+
 .player-table {
   margin-left: auto;
   margin-right: auto;
@@ -124,14 +129,15 @@ input {
 
 .startBattle {
   position: absolute;
-  bottom: 15vh;
-  width: 100%;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
 }
 
 button {
   font-family: 'Ubuntu Mono';
   border-radius: 15px;
-  background-color: rgb(252, 165, 165);
+  background-color: rgb(220, 38, 38);
   border: 1px solid #000000;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding: 1vh 1vw;
@@ -160,8 +166,43 @@ button {
 }
 
 .battle-header {
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.battle-header-player1 {
+  margin: 1%;
+  padding: 2%;
+  border-radius: 25px;
+  width: 50%;
+  text-align: left;
+  background-color: rgb(255, 235, 234);
+}
+
+.battle-header-player2 {
+  margin: 1%;
+  padding: 2%;
+  border-radius: 25px;
+  width: 50%;
+  text-align: right;
+  background-color: rgb(255, 235, 234);
+}
+
+.header-container {
+  position: relative;
+}
+
+.versus {
+  font-family: 'Oleo Script', cursive;
+  color: rgb(254, 242, 242);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 120px;
 }
 
 .battle-table {
@@ -172,6 +213,11 @@ button {
 
 .inner-container {
   display: flex;
+}
+
+.winner-details {
+  margin: 2vh;
+  font-size: 32px;
 }
 
 .footer {
@@ -190,46 +236,56 @@ button {
 
 @media only screen and (max-width: 1000px) {
   .App {
+    height: 120vh;
     margin-left: 3vw;
     margin-right: 3vw;
+    margin-top: 2vh;
+    overflow: scroll;
   }
+
+  h1 {
+    font-size: 70px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
   .player-details {
+    top: 0;
+  }
+
+  .flex-container {
     flex-direction: column;
+  }
+
+  .search-container {
+    margin-left: 0;
     width: 100%;
+    margin-top: 2%;
   }
 
   .left, .right {
     width: 96%;
     height: 50%;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .startBattle {
+    top: 97%;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .battle-header {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .battle-header-player1, .battle-header-player2 {
+    position: relative;
+    height: 50%;
+    width: 90%;
+  }
+
+  .versus {
+    font-size: 200px;
+    position: absolute;
   }
 }
