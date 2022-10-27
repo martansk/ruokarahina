@@ -26,7 +26,7 @@ const PlayerSelection = (props) => {
     const findFoods = (filter) => {
         try {
             if (filter === '') setData([]); // if there's no filter, show no data
-            if (!filter.match(regex)) setData([]); // if filter is non-valid, show no data
+            else if (!filter.match(regex)) setData([]); // if filter is non-valid, show no data
             else {
                 axios
                     .get(url + filter) //e.g. .../api/food/omen
