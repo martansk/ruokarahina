@@ -2,7 +2,7 @@ const supertest = require('supertest')
 const app = require('../app.js')
 
 const api = supertest(app);
-const endpoint = '/api/food/'
+const endpoint = '/api/food/';
 
 describe('Food API endpoints', () => {
     

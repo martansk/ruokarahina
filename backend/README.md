@@ -5,7 +5,9 @@ Ruokien hakuominaisuus. Palauttaa kaikki ruoka-aineet, joiden nimessä on omena.
 GET http://localhost:3001/api/food/4002
 Palauttaa yksittäisen ruoka-aineen id:llä.
 
-Väärä syntaksi hakusanassa esim. http://localhost:3001/api/food/id/4002omena palauttaa tyhjän listan.
+Mikäli hakusanoilla ei löydy tuloksia, palautetaan tyhjä lista.
+
+Väärä syntaksi hakusanassa esim. http://localhost:3001/api/food/*? palauttaa 400.
 
 POST http://localhost:3001/api/battle/initialize
 Payloadina pelaajien statsit. Palauttaa ottelun kulun
