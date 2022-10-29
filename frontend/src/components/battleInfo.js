@@ -34,26 +34,40 @@ const BattleInfo = () => {
 
             {/* Initial player details */}
             <BattleHeader player1={player[0]} player2={player[1]} />
-        
-            <table className='battle-table'>
-                <tbody>
-                    {/* Battle begins */}
-                    <tr><td><b>0 s.</b></td><td>Taistelu alkaa.</td></tr>
-                    {Object.entries(battle).map((entry) => {
-                        // eslint-disable-next-line no-unused-vars
-                        const [key, value] = entry;
-                        return <BattleLine key={value.turn.time} 
-                            turn={value.turn} 
-                            attacker={value.turn.attacker.fi === value.player1.name.fi ? value.player1 : value.player2} 
-                            defender={value.turn.attacker.fi !== value.player1.name.fi ? value.player1 : value.player2}
-                        />;})
-                    }
-                </tbody>
-            </table>
+
+            <div className='battle-table-header'>Ottelun kulku:</div>
+            <div className='battle-table-div'>
+                <div className='battle-content'>
+                    <div className='battle-container'>
+                        <table>
+                            <tbody>
+                                {/* Battle begins */}
+                                <tr>
+                                    <td><b>0 s.</b></td>
+                                    <td>Taistelu alkaa.</td>
+                                </tr>
+                                {Object.entries(battle).map((entry) => {
+                                // eslint-disable-next-line no-unused-vars
+                                    const [key, value] = entry;
+                                    return <BattleLine key={value.turn.time} 
+                                        turn={value.turn} 
+                                        attacker={value.turn.attacker.fi === value.player1.name.fi ? value.player1 : value.player2} 
+                                        defender={value.turn.attacker.fi !== value.player1.name.fi ? value.player1 : value.player2}
+                                    />;})
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
 
             {/* Winner details */}
-            <div className='winner-details'><b>{Object.values(battle).at(-1).turn.attacker.fi} voitti taistelun!</b></div>
-        
+            <div className='winner-details'>
+                <div className='winner-text'>
+                    <b>{Object.values(battle).at(-1).turn.attacker.fi} voitti taistelun!</b>
+                </div>
+            </div>
+                    
             {/* Start a new battle */}
             <NewButton />
 

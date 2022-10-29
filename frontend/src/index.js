@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
 import store from './store';
-import Footer from './components/footer';
 import IntroBox from './components/introBox';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,7 +12,9 @@ root.render(
         <Provider store={store}>
             <IntroBox />
             <App />
-            <Footer />
+            <footer>
+            Tämä sivusto hyödyntää Terveyden ja hyvinvoinnin laitoksen, Finelin, avointa dataa.
+            </footer>
         </Provider>
     </React.StrictMode>
 );

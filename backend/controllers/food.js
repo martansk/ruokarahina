@@ -2,11 +2,11 @@ const foodService = require('../services/foodService');
 
 /**
  * Fineli API works both with name and id.
- * If search query contains other than numbers and characters, returns 400 and error message.
+ * If search query contains other than whitespace, numbers and characters, returns 400 and error message.
  * Empty search query also returns 400 and error message.
 */
 
-const regex = /(^[a-zA-Zäö]+$)|(^\d*$)/; // food name search query may contain only numbers and characters
+const regex = /(^[a-zA-Zäö\d ]+$)/; // regex for food name search query
 
 module.exports = {
   findFood: async (req, res) => {

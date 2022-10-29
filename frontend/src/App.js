@@ -43,41 +43,38 @@ const App = () => {
         <div className='App'>
 
             <div className='player-details'>
-                <div className='flex-container'>
-                    <div className='left'>
-                        {Object.keys(player[0]).length === 0 ? 
-                            <PlayerSelection nro={1} x={'1'} /> :
-                            <PlayerInfo 
-                                x={'1'}
-                                name={player[0].name} 
-                                energyKcal={player[0].energyKcal}
-                                carbohydrate={player[0].carbohydrate}
-                                protein={player[0].protein}
-                                fat={player[0].fat}
-                                id={player[0].id}
-                            />}
-                    </div>
-
-                    <div className='right'>
-                        {Object.keys(player[1]).length === 0 ?
-                            <PlayerSelection nro={2} x={'2'} /> :
-                            <PlayerInfo 
-                                x={'2'}
-                                name={player[1].name} 
-                                energyKcal={player[1].energyKcal}
-                                carbohydrate={player[1].carbohydrate}
-                                protein={player[1].protein}
-                                fat={player[1].fat}
-                                id={player[1].id}
-                            />}
-                    </div>
-                </div>
-                <div className='startBattle'>
-                    {Object.keys(player[0]).length !== 0 && Object.keys(player[1]).length !== 0 ? 
-                        <button className='start-battle-button' onClick={() => startBattle()}>Aloita taistelu</button> :
-                        <button className='start-battle-button' disabled>Aloita taistelu</button>}
+                <div className='left'>
+                    {Object.keys(player[0]).length === 0 ? 
+                        <PlayerSelection nro={1} x={'1'} /> :
+                        <PlayerInfo 
+                            x={'1'}
+                            name={player[0].name} 
+                            energyKcal={player[0].energyKcal}
+                            carbohydrate={player[0].carbohydrate}
+                            protein={player[0].protein}
+                            fat={player[0].fat}
+                            id={player[0].id}
+                        />}
                 </div>
 
+                <div className='right'>
+                    {Object.keys(player[1]).length === 0 ?
+                        <PlayerSelection nro={2} x={'2'} /> :
+                        <PlayerInfo 
+                            x={'2'}
+                            name={player[1].name} 
+                            energyKcal={player[1].energyKcal}
+                            carbohydrate={player[1].carbohydrate}
+                            protein={player[1].protein}
+                            fat={player[1].fat}
+                            id={player[1].id}
+                        />}
+                </div>
+            </div>
+            <div className='startBattle'>
+                {Object.keys(player[0]).length !== 0 && Object.keys(player[1]).length !== 0 ? 
+                    <button className='start-battle-button' onClick={() => startBattle()}>Aloita taistelu</button> :
+                    <button className='start-battle-button' disabled>Aloita taistelu</button>}
             </div>
         </div>
     );
