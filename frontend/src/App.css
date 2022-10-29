@@ -49,8 +49,12 @@ h2 {
     background-color: rgba(253, 53, 53, 0.5);
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
-    margin: 1%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 1%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .right {
@@ -58,8 +62,12 @@ h2 {
     background-color: rgba(10, 137, 255, 0.5);
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
-    margin: 1%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-right: 1%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .left:hover {
@@ -71,10 +79,11 @@ h2 {
 }
 
 .search-container {
-    height: 80%;
+    flex: 1;
     margin: 10%;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 input {
@@ -84,7 +93,17 @@ input {
     padding-bottom: 18px;
 }
 
+.dropdown-container {
+    flex: 1;
+    position: relative;
+}
+
 .dropdown {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
     flex: 1;
     background-color: white;
     display: flex;
@@ -189,7 +208,10 @@ input {
     background-color: rgba(253, 53, 53, 0.5);
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
-    margin: 1%;
+    margin-left: 1%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-right: 0;
     font-size: 16px;
 }
 
@@ -198,7 +220,10 @@ input {
     background-color: rgba(10, 137, 255, 0.5);
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
-    margin: 1%;
+    margin-left: 0;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-right: 1%;
     font-size: 16px;
 }
 
@@ -259,4 +284,90 @@ input {
 footer {
     text-align: center;
     margin-bottom: 1%;
+}
+
+@media only screen and (max-width: 500px) {
+
+    h1 {
+        font-size: 64px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    .player-details {
+        flex-direction: column;
+    }
+
+    .search-container {
+        margin: 2%;
+    }
+
+    .left {
+        border-top-right-radius: 25px;
+        border-bottom-left-radius: 0;
+        margin-top: 1%;
+        margin-left: 1%;
+        margin-right: 1%;
+        margin-bottom: 0;
+    }
+
+    .right {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 25px;
+        border-top-right-radius: 0;
+        margin-top: 0;
+        margin-left: 1%;
+        margin-right: 1%;
+        margin-bottom: 1%;
+    }
+
+    .startBattle {
+        top: 90%;
+    }
+
+    .start-battle-button {
+        font-size: 16px;
+        padding-left: 32px;
+        padding-right: 32px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .player-info {
+        font-size: 14px;
+    }
+
+    .player-name {
+        font-size: 16px;
+    }
+
+    .change-player-button {
+        font-size: 12px;
+        height: 32px;
+    }
+
+    .battle-header-player1 {
+        margin-right: 0;
+    }
+
+    .battle-header-player2 {
+        margin-left: 0;
+    }
+
+}
+
+@media only screen and (max-width: 500px), only screen and (max-height: 700px) {
+    
+    h1 {
+        font-size: 32px;
+    }
+
+    .player-name {
+        font-size: 12px;
+    }
+    .player-info {
+        font-size: 12px;
+    }
 }
