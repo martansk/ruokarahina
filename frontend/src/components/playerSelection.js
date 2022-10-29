@@ -66,25 +66,23 @@ const PlayerSelection = (props) => {
         );
     };
     
-    return (
-        
-        <div className='search-container'>
-      
-
-        
+    return (     
+        <div className='search-container'>      
             <div className='player-label'>
                 <label><b>Valitse {props.x}. pelaaja:</b></label>
             </div>
+
 
             <input
                 value={filter}
                 onChange={handleFind}
                 placeholder='Hae ruoan nimellä' />
 
-            <div className='dropdown'>
-                {results(data)}
+            <div className='dropdown-container'>
+                <div className='dropdown'>
+                    {results(data)}
+                </div>
             </div>
-
         </div>
     );
 };

@@ -21,7 +21,7 @@ const PlayerInfo = (props) => {
         <div className='search-container'>
             <div className='player-info'>
                 <div>{props.x}. pelaaja</div>
-                <div><b>{props.name.fi}</b></div>
+                <div className='player-name'><b>{props.name.fi}</b></div>
                 <table className='player-table'>
                     <tbody>
                         <tr><td>Energia:</td><td>{Math.round(props.energyKcal * 10) / 10}</td></tr>
