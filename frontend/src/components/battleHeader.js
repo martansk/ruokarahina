@@ -8,9 +8,6 @@ const BattleHeader = (props) => {
 
     return (
         <div className='header-container'>
-            <div className='versus'>
-                VS
-            </div>
             <div className='battle-header'>
                 <div className='battle-header-player1'>
                     <div className='vs-header'>

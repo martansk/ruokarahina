@@ -21,7 +21,7 @@ const PlayerSelection = (props) => {
     //const url = process.env.REACT_APP_API_BASE_URL + '/api/food/';
     const url = '/api/food/';
 
-    const regex = /(^[a-zA-Zäö]+$)|(^\d*$)/;
+    const regex = /(^[a-zA-Zäö\d ]+$)/;
 
     const findFoods = (filter) => {
         try {
@@ -70,24 +70,20 @@ const PlayerSelection = (props) => {
         
         <div className='search-container'>
       
-            <form>
-        
-                <div className='player-label'>
-                    <label><b>Valitse {props.x}. pelaaja:</b></label>
-                </div>
 
-                <div className='inner-container'>
-                    <input
-                        value={filter}
-                        onChange={handleFind}
-                        placeholder='Hae ruoan nimellä' />
-                </div>
-            </form>
+        
+            <div className='player-label'>
+                <label><b>Valitse {props.x}. pelaaja:</b></label>
+            </div>
+
+            <input
+                value={filter}
+                onChange={handleFind}
+                placeholder='Hae ruoan nimellä' />
+
             <div className='dropdown'>
                 {results(data)}
             </div>
-
-            {/*<div className='image-container'></div>*/}
 
         </div>
     );

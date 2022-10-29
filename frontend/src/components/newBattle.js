@@ -17,7 +17,7 @@ const NewButton = () => {
     };
 
     return (
-        <div>
+        <div className='new-battle'>
             <button className='start-battle-button' onClick={(() => initializeNewBattle())}>Aloita uusi taistelu</button>
         </div>
     );

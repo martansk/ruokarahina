@@ -30,8 +30,8 @@ const PlayerInfo = (props) => {
                         <tr><td>Rasva:</td><td>{Math.round(props.fat * 10) / 10}</td></tr>
                     </tbody>
                 </table>
-                <div>
-                    <button onClick={() => removePlayer(props.x)}>Vaihda pelaajaa</button>
+                <div className='change-player-div'>
+                    <button className='change-player-button' onClick={() => removePlayer(props.x)}>Vaihda pelaajaa</button>
                 </div>
             </div>
         </div>

@@ -1,295 +1,262 @@
 html {
-  font-family: 'Ubuntu Mono', monospace;
-  background-color: rgb(254, 242, 242);
+    font-family: 'Ubuntu Mono', monospace;
 }
 
 body {
-  margin: 0;
+    margin: 0;
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-family: 'Oleo Script', cursive;
-  font-size: 96px;
+    font-family: 'Oleo Script', cursive;
+    font-size: 96px;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
 }
 
 h2 {
-  margin-top: 0;
-  font-size: 24px;
-}
-
-h3 {
-  margin-top: 0;
-}
-
-.intro-box {
-  text-align: center;
-  background-color: rgb(185, 28, 28);
-  color: white;
-  padding-bottom: 2vh;
-  padding-top: 2vh;
+    margin-top: 0;
+    text-align: center;
 }
 
 .App {
-  position: relative;
-  text-align: center;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
-  margin-left: 10vw;
-  margin-right: 10vw;
-  border: solid rgb(185, 28, 28);
-  height: 80vh;
-  line-height: 1.5;
-  border-radius: 25px;
+    line-height: 1.5;
+    flex: 1;
+    position: relative;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
 }
 
 .player-details {
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-  width: 100%;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
 }
 
-.flex-container {
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-  width: 100%;
+.left {
+    flex: 1;
+    background-color: rgba(253, 53, 53, 0.5);
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    margin: 1%;
+    text-align: center;
 }
 
-label {
-  font-size: 24px;
+.right {
+    flex: 1;
+    background-color: rgba(10, 137, 255, 0.5);
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin: 1%;
+    text-align: center;
 }
 
-.left, .right {
-  border-radius: 25px;
-  width: 50%;
-  background-color: rgb(255, 235, 234);
-  margin: 2%;
-  max-height: 100%;
-  position: relative;
+.left:hover {
+    background-color: rgba(253, 53, 53, 0.9);
+}
+
+.right:hover {
+    background-color: rgba(10, 137, 255, 0.9);
 }
 
 .search-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin-left: 25%;
-  margin-right: 25%;
-  height: 77%;
-  margin-top: 20%;
-  margin-bottom: 1%;
-}
-
-.player-label {
-  text-align: left;
-  margin-bottom: 1vh;
-}
-
-.dropdown {
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-  overflow-y: scroll;
-  height: 80%;
-}
-
-.dropdown:empty {
-  display: none;
-  border:none;
-}
-
-.dropdown-line {
-  cursor: pointer;
-  text-align: start;
-  padding: 3px;
-}
-
-.dropdown-line:hover {
-  background-color: rgb(252, 165, 165);
+    height: 80%;
+    margin: 10%;
+    display: flex;
+    flex-direction: column;
 }
 
 input {
-  border-radius: 5px;
-  padding-top: 3%;
-  padding-bottom: 3%;
-  padding-left: 5%;
-  padding-right: 5%;
-  width: 100%;
-  box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.dropdown {
+    flex: 1;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    overflow-y: auto;
+    font-size: 16px;
+    z-index: 10;
+}
+
+.dropdown:empty {
+    display: none;
+    border:none;
+}
+
+.dropdown-line {
+    cursor: pointer;
+    text-align: start;
+    padding: 3px;
+}
+  
+.dropdown-line:hover {
+    background-color: rgb(234, 226, 183);;
 }
 
 .player-table {
-  margin-left: auto;
-  margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-.player-info {
-  font-size: 24px;
-}
-
 
 .startBattle {
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  transform: translate(-50%, -50%); 
-}
-
-button {
-  font-family: 'Ubuntu Mono';
-  border-radius: 15px;
-  background-color: rgb(220, 38, 38);
-  border: 1px solid #000000;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 1vh 1vw;
-  color: white;
-  text-align: center;
-  display: inline-block;
-  font-size: 24px;
-  margin: 2%;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
 }
 
 .start-battle-button {
-  text-transform: uppercase;
-  background-color: rgb(220, 38, 38);
-  padding: 2vh 2vw;
+    font-size: 32px;
+    padding-left: 64px;
+    padding-right: 64px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-radius: 25px;
+    background-color: rgb(252, 191, 73);
+    border: rgb(252, 191, 73);;
+    color: black;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .start-battle-button:disabled {
-  background-color: grey;
+    background-color: grey;
+    opacity: 0.5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.change-player-div {
+    margin: 2%;
+}
+
+.change-player-button {
+    height: 44px;
+    font-size: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: rgb(234, 226, 183);
+    border: rgb(234, 226, 183);
+    border-radius: 25px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .battle {
-  margin: 2%;
-  text-align: center;
-  overflow: auto;
-  height: 90%;
-}
-
-.battle-header {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-}
-
-.battle-header-player1 {
-  margin: 1%;
-  padding: 2%;
-  border-radius: 25px;
-  width: 50%;
-  text-align: left;
-  background-color: rgb(255, 235, 234);
-}
-
-.battle-header-player2 {
-  margin: 1%;
-  padding: 2%;
-  border-radius: 25px;
-  width: 50%;
-  text-align: right;
-  background-color: rgb(255, 235, 234);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .header-container {
-  position: relative;
+    position: relative;
 }
 
-.versus {
-  font-family: 'Oleo Script', cursive;
-  color: rgb(254, 242, 242);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  font-size: 120px;
+.header-container::before {
+    font-size: 96px;
+    font-family: 'Oleo Script', cursive;
+    content: 'VS';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0.5;
 }
 
-.battle-table {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
+.battle-header {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
 }
 
-.inner-container {
-  display: flex;
+.battle-header-player1 {
+    flex: 1;
+    background-color: rgba(253, 53, 53, 0.5);
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    margin: 1%;
+    font-size: 16px;
+}
+
+.battle-header-player2  {
+    flex: 1;
+    background-color: rgba(10, 137, 255, 0.5);
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin: 1%;
+    font-size: 16px;
 }
 
 .winner-details {
-  margin: 2vh;
-  font-size: 32px;
-}
-
-.footer {
-  text-align: center;
-  background-color: rgb(185, 28, 28);
-  color: white;
-  padding-bottom: 2vh;
-  padding-top: 2vh;
-  margin-bottom: 0;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media only screen and (max-width: 1000px) {
-  .App {
-    height: 120vh;
-    margin-left: 3vw;
-    margin-right: 3vw;
-    margin-top: 2vh;
-    overflow: scroll;
-  }
-
-  h1 {
-    font-size: 70px;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-
-  .player-details {
-    top: 0;
-  }
-
-  .flex-container {
+    text-align: center;
+    margin: 1%;
+    background-color: rgb(234, 226, 183);
+    flex: 1;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-size: 32px;
+    display: flex;
     flex-direction: column;
-  }
+    align-content: center;
+    justify-content: space-evenly;
+}
 
-  .search-container {
-    margin-left: 0;
-    width: 100%;
-    margin-top: 2%;
-  }
+.new-battle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%
+}
 
-  .left, .right {
-    width: 96%;
-    height: 50%;
-  }
-
-  .startBattle {
-    top: 97%;
-  }
-
-  .battle-header {
-    flex-direction: column;
-  }
-
-  .battle-header-player1, .battle-header-player2 {
+.battle-table-div {
+    flex: 1;
     position: relative;
-    height: 50%;
-    width: 90%;
-  }
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    font-size: 16px;
+    border: solid 1px black;
+    border-radius: 5px;
+}
 
-  .versus {
-    font-size: 200px;
+.battle-content {
+    margin: 5px;
     position: absolute;
-  }
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+.battle-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.battle-content::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 5px;
+}
+
+.battle-table-header {
+    margin-left: 2%;
+}
+
+footer {
+    text-align: center;
+    margin-bottom: 1%;
 }
