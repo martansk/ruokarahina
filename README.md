@@ -3,7 +3,7 @@ Ruokarähinä-sovelluksessa käyttäjä voi valita haluamansa ruoka-aineet taist
 
 Sovelluksen backend on toteutettu docker microservicenä node.js:n ja expressin avulla. Backendissä suoritetaan ruoka-aineiden haku Fineli API:a käyttäen ja taistelulogiikka. API:n testaamiseen on käytetty Jest ja SuperTest-kirjastoja.
 
-Sovelluksen frontend on toteutettu Reactilla. Sovelluksen tilan hallinta on toteutettu Redux Toolkit-kirjastoa käyttäen. Yksikkötestit on suoritettu Jestillä ja end-to-end testit Cypressilla. Ulkoasu on suunnitelut Figmalla. Sovellus on responsiivinen, eli se toimii mobiililaitteilla ja tabletilla.
+Sovelluksen frontend on toteutettu Reactilla. Sovelluksen tilan hallinta on toteutettu Redux Toolkit-kirjastoa käyttäen. Yksikkötestit on suoritettu Jestillä ja end-to-end testit Cypressilla. Ulkoasu on suunniteltu Figmalla. Sovellus on responsiivinen, eli se toimii mobiililaitteilla ja tabletilla.
 
 Voit halutessasi tutustua sovellukseen osoitteessa: https://ruokarahina.fly.dev/
 
