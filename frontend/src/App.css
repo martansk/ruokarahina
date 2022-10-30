@@ -282,6 +282,7 @@ input {
     flex-direction: column;
     align-content: center;
     justify-content: space-evenly;
+    padding: 2%;
 }
 
 .new-battle {
