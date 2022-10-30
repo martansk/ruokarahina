@@ -1,5 +1,5 @@
-const supertest = require('supertest')
-const app = require('../app.js')
+const supertest = require('supertest');
+const app = require('../app.js');
 
 const api = supertest(app);
 const endpoint = '/api/food/';
@@ -13,7 +13,7 @@ describe('Food API endpoints', () => {
     });
 
     it('malformatted input', async () => {
-        const response = await api.get(endpoint + "!?123");
+        const response = await api.get(endpoint + '!?123');
         expect(response.status).toEqual(400);
     });
 
@@ -34,5 +34,5 @@ describe('Food API endpoints', () => {
     it('searching with empty input', async () => {
         const response = await api.get(endpoint);
         expect(response.status).toEqual(404);
-    })
+    });
 });

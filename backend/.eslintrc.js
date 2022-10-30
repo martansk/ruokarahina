@@ -3,16 +3,22 @@ module.exports = {
     'commonjs': true,
     'es2021': true,
     'node': true,
-    'jest/globals':true
+    'jest/globals': true
   },
-  'extends': 'eslint:recommended',
+  'extends': [
+    'eslint:recommended',
+    'plugin:jest/recommended'
+  ],
   'parserOptions': {
     'ecmaVersion': 'latest'
   },
+  'plugins': [
+    'jest'
+  ],
   'rules': {
     'indent': [
       'error',
-      2
+      4
     ],
     'linebreak-style': [
       'error',

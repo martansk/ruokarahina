@@ -1,3 +1,4 @@
+/* eslint-disable jest/expect-expect */
 describe('Ruokarahina app', function() {
     beforeEach(function() {
         cy.visit('http://localhost:3000');
@@ -11,10 +12,10 @@ describe('Ruokarahina app', function() {
     it('user can search and select player', function() {
         cy.get('input:first').type('omena');
         cy.contains('Omena, kuivattu').click();
-        cy.contains('Energia: 276.5');
+        cy.contains('276.5');
         cy.get('input:last').type('ahven');
         cy.contains('Ahven, leivitetty, paistettu').click();
-        cy.contains('Hiilihydraatit: 4.7');
+        cy.contains('4.7');
     });
 
     it('User should nt be able to start battle, if only one player is selected', function() {
@@ -36,7 +37,7 @@ describe('Ruokarahina app', function() {
             cy.contains('Valitse 1. pelaaja:');
             cy.get('input:first').type('omena');
             cy.contains('Omena, kuivattu').click();
-            cy.contains('Energia: 276.5'); 
+            cy.contains('276.5'); 
         });
 
         it('User can start battle, and after that start a new battle', function() {

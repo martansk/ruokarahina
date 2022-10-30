@@ -1,4 +1,4 @@
-const bodyParser = require("body-parser");
+const bodyParser = require('body-parser');
 const cors = require('cors');
 const routes = require('./routes/index');
 const express = require('express');
@@ -11,6 +11,6 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cors());
 app.use('/api/', routes);
-app.use(express.static('build'))
+app.use(express.static('build'));
 
 module.exports = app;

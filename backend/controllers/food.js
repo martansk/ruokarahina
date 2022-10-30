@@ -9,20 +9,20 @@ const foodService = require('../services/foodService');
 const regex = /(^[a-zA-Zäö\d ]+$)/; // regex for food name search query
 
 module.exports = {
-  findFood: async (req, res) => {
-    if (!req.params.food) {
-      res.status(400).send('no food name to look for');
+    findFood: async (req, res) => {
+        if (!req.params.food) {
+            res.status(400).send('no food name to look for');
+        }
+        else if (!req.params.food.match(regex)) {
+            res.status(400).send('non-valid input');
+        }
+        else {
+            try {
+                const response = await foodService.searchFood(req.params.food);
+                res.send(response);
+            } catch (e) {
+                res.send(e.message);
+            }
+        }
     }
-    else if (!req.params.food.match(regex)) {
-      res.status(400).send('non-valid input');
-    }
-    else {
-      try {
-        const response = await foodService.searchFood(req.params.food);
-        res.send(response);
-      } catch (e) {
-        res.send(e.message);
-      }
-    }
-  }
 };
