@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
  * Component for searching and selecting players.
  * 
  * @param {string} props Player number (1 or 2)
- * @returns Search form and search results with "select"-button.
+ * @returns Search form and search results as a dropdown, where player can be selected.
  */
 const PlayerSelection = (props) => {
     

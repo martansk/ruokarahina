@@ -2,7 +2,6 @@ import playerReducer from './playerReducer';
 import deepFreeze from 'deep-freeze';
 
 describe('playerReducer', () => {
-    //{ type:'player/addPlayer', payload: [ playeroobject, 0 ] }
     test('returns new state with action player/addPlayer', () => {
         const state = { 0: {}, 1:{} };
         const playerObject = {

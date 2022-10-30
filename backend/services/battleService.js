@@ -1,7 +1,7 @@
 /**
  * Player class creates a player object based on request body.
- * Additionally, the player receives two ner values, delay and time_to_next_move.
- * Delay tells how slow the player is to attack. Time_to_next_move determines, which player attacks next.
+ * Additionally, the player receives two new values, delay and time_to_next_move.
+ * Delay tells how slowly the player attacks. Time_to_next_move determines, which player attacks next.
  */
 class Player {
   constructor(payload) {
@@ -59,11 +59,11 @@ const createNextTurn = (turn, player1, player2) => {
 
 module.exports = {
   /**
-     * Creates a battle array, which contains details for each turn.
-     * 
-     * @param {JSON} payload Request body, contains players' details.
-     * @returns Battle array as JSON.
-     */
+    * Creates a battle array, which contains details for each turn.
+    * 
+    * @param {JSON} payload Request body, contains players' details.
+    * @returns Battle array.
+    */
   initializeBattle: (payload) => {
     let battleArray = [];
     const player1 = new Player(payload.player1);

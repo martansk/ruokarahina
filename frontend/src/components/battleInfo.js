@@ -15,12 +15,16 @@ const BattleInfo = () => {
     const player = useSelector((state) => state.players);
 
     if (battle.length === 0) return (
-        <div>
+        <div className='battle'>
 
             {/* Initial player details */}
             <BattleHeader player1={player[0]} player2={player[1]} />
 
-            <div>Kumpikaan ei jaksanut taistella, vaan {player[0].name.fi} ja {player[1].name.fi} lähtivät yhdessä kaljalle.</div>
+            <div className='winner-details'>
+                <div className='winner-text'>
+                    Kumpikaan ei jaksanut taistella, vaan {player[0].name.fi} ja {player[1].name.fi} lähtivät yhdessä kaljalle.
+                </div>
+            </div>
             
             {/* Start a new battle */}
             <NewButton />
