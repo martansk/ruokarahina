@@ -66,5 +66,11 @@ Build the app
 npm run build
 ```
 
+## The challenge
+1. Nutrition contents are fetched from Fineli API (/backend/services/foodService.js).
+2. /backend/services/battleService.js handles the conversion of nutrition contents into Player class.
+3. Battle logic is implemented by the /backend/services/battleService.js
+4. There's a visual frontend to showcase the results.
+
 ## More information
 You can find more information about the backend and the frontend in the README.md file of the folder.
