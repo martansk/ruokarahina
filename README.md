@@ -7,7 +7,7 @@ The frontend of this app is implemented with React. The managment of application
 
 You can familiarize yourself with the application here: https://ruokarahina.fly.dev/
 
-## Ohjeet
+## How to run
 
 Clone the repository
 ```
