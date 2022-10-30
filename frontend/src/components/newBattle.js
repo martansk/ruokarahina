@@ -3,24 +3,27 @@ import { useDispatch } from 'react-redux';
 import { removePlayer } from '../reducers/playerReducer';
 import { removeBattle } from '../reducers/battleReducer';
 
-
 const NewButton = () => {
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch();
+  /**
+   * Clears the redux store for next battle.
+   */
+  const initializeNewBattle = () => {
+    dispatch(removePlayer());
+    dispatch(removeBattle());
+  };
 
-    /**
-     * Clears the redux store for next battle.
-     */
-    const initializeNewBattle = () => {
-        dispatch(removePlayer());
-        dispatch(removeBattle());
-    };
-
-    return (
-        <div className='new-battle'>
-            <button className='start-battle-button' onClick={(() => initializeNewBattle())}>Aloita uusi taistelu</button>
-        </div>
-    );
+  return (
+    <div className="new-battle">
+      <button
+        className="start-battle-button"
+        onClick={() => initializeNewBattle()}
+      >
+        Aloita uusi taistelu
+      </button>
+    </div>
+  );
 };
 
 export default NewButton;

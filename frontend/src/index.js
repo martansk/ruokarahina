@@ -8,13 +8,15 @@ import IntroBox from './components/introBox';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <React.StrictMode>
-        <Provider store={store}>
-            <IntroBox />
-            <App />
-            <footer>
-                Tämä sivusto hyödyntää Terveyden ja hyvinvoinnin laitoksen, <a href="https://fineli.fi/fineli/fi/avoin-data">Finelin</a>, avointa dataa.
-            </footer>
-        </Provider>
-    </React.StrictMode>
+  <React.StrictMode>
+    <Provider store={store}>
+      <IntroBox />
+      <App />
+      <footer>
+        Tämä sivusto hyödyntää Terveyden ja hyvinvoinnin laitoksen,{' '}
+        <a href="https://fineli.fi/fineli/fi/avoin-data">Finelin</a>, avointa
+        dataa.
+      </footer>
+    </Provider>
+  </React.StrictMode>
 );

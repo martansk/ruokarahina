@@ -1,43 +1,43 @@
 module.exports = {
-    'env': {
-        'browser': true,
-        'es2021': true,
-        'node': true,
-        'jest/globals': true
+  'env': {
+    'browser': true,
+    'es2021': true,
+    'node': true,
+    'jest/globals': true
+  },
+  'extends': [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:jest/recommended'
+  ],
+  'overrides': [
+  ],
+  'parserOptions': {
+    'ecmaFeatures': {
+      'jsx': true
     },
-    'extends': [
-        'eslint:recommended',
-        'plugin:react/recommended',
-        'plugin:jest/recommended'
+    'ecmaVersion': 'latest',
+    'sourceType': 'module'
+  },
+  'plugins': [
+    'react', 'jest'
+  ],
+  'rules': {
+    'indent': [
+      'error',
+      2
     ],
-    'overrides': [
+    'linebreak-style': [
+      'error',
+      'windows'
     ],
-    'parserOptions': {
-        'ecmaFeatures': {
-            'jsx': true
-        },
-        'ecmaVersion': 'latest',
-        'sourceType': 'module'
-    },
-    'plugins': [
-        'react', 'jest'
+    'quotes': [
+      'error',
+      'single'
     ],
-    'rules': {
-        'indent': [
-            'error',
-            4
-        ],
-        'linebreak-style': [
-            'error',
-            'windows'
-        ],
-        'quotes': [
-            'error',
-            'single'
-        ],
-        'semi': [
-            'error',
-            'always'
-        ]
-    }
+    'semi': [
+      'error',
+      'always'
+    ]
+  }
 };
