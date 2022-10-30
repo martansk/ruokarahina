@@ -407,14 +407,23 @@ footer {
         font-size: 32px;
     }
 
-    .player-name {
+    .player-name, .player-info {
         font-size: 12px;
     }
-    .player-info {
+
+    .battle-header-player1, .battle-header-player2 {
         font-size: 12px;
     }
 
     .winner-text {
+        font-size: 14px;
+    }
+
+    .battle-table-div, .battle-table-header {
+        font-size: 12px;
+    }
+
+    footer {
         font-size: 12px;
     }
 }
