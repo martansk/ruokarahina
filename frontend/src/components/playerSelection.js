@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
  * 
  * Component for searching and selecting players.
  * 
- * @param {string} props Player number (1 or 2)
+ * @param {Object} props Player number (1 or 2) as a string(x) and number(nro).
  * @returns Search form and search results as a dropdown, where player can be selected.
  */
 const PlayerSelection = (props) => {
@@ -41,7 +41,7 @@ const PlayerSelection = (props) => {
             console.log(e.message);
         }
     };
-    
+
     const handleFind = (event) => {
         findFoods(event.target.value);
     };
@@ -54,7 +54,7 @@ const PlayerSelection = (props) => {
 
     const selectPlayer = (id) => {
         const playerObject = findByID(data, id);
-        dispatch(addPlayer( [ playerObject[0], props.nro-1 ]));
+        dispatch(addPlayer([ playerObject[0], props.nro-1 ]));
         setFilter('');
         setData([]);
     };
