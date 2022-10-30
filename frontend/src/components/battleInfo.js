@@ -35,6 +35,14 @@ const BattleInfo = () => {
             {/* Initial player details */}
             <BattleHeader player1={player[0]} player2={player[1]} />
 
+            
+            {/* Winner details */}
+            <div className='winner-details'>
+                <div className='winner-text'>
+                    <b>{Object.values(battle).at(-1).turn.attacker.fi} voitti taistelun!</b>
+                </div>
+            </div>
+
             <div className='battle-table-header'>Ottelun kulku:</div>
             <div className='battle-table-div'>
                 <div className='battle-content'>
@@ -58,13 +66,6 @@ const BattleInfo = () => {
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </div>
-
-            {/* Winner details */}
-            <div className='winner-details'>
-                <div className='winner-text'>
-                    <b>{Object.values(battle).at(-1).turn.attacker.fi} voitti taistelun!</b>
                 </div>
             </div>
                     

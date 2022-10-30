@@ -18,8 +18,7 @@ const PlayerSelection = (props) => {
     const [ filter, setFilter ] = useState('');
     const [ data, setData ] = useState([]);
     
-    //const url = process.env.REACT_APP_API_BASE_URL + '/api/food/';
-    const url = '/api/food/';
+    const url = process.env.REACT_APP_API_BASE_URL + '/api/food/';
 
     const regex = /(^[a-zA-Zäö\d ]+$)/;
 
