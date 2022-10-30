@@ -1,70 +1,70 @@
-# Ruokarähinä - Solidabis koodihaaste 2022
-Ruokarähinä-sovelluksessa käyttäjä voi valita haluamansa ruoka-aineet taisteluun. Tämän jälkeen käyttäjälle näytetään ottelun kulku.
+# Ruokarähinä - Solidabis code challenge 2022
+Ruokarähinä (en.Food Brawl) is an application where user can pick the ingredients they want for the battle. After this, the details of the match and it's winner are shown to the user.
 
-Sovelluksen backend on toteutettu docker microservicenä node.js:n ja expressin avulla. Backendissä suoritetaan ruoka-aineiden haku Fineli API:a käyttäen ja taistelulogiikka. API:n testaamiseen on käytetty Jest ja SuperTest-kirjastoja.
+The backend of this app is implemented as a Docker microservice with Node.js and Express. Backend fetches the ingredients from Fineli API and implements the battle logic. Jest and SuperTest are used to the API.
 
-Sovelluksen frontend on toteutettu Reactilla. Sovelluksen tilan hallinta on toteutettu Redux Toolkit-kirjastoa käyttäen. Yksikkötestit on suoritettu Jestillä ja end-to-end testit Cypressilla. Ulkoasu on suunniteltu Figmalla. Sovellus on responsiivinen, eli se toimii mobiililaitteilla ja tabletilla. Sovellus tukee myös dark theme-asetusta.
+The frontend of this app is implemented with React. The managment of application state is implemented with Redux Toolkit. Jest is used for unit testing and Cypress for E2E-testing. The UI is designed with Figma. The app is responsive, so it can be used with mobile devices and tablets. App also works with dark theme.
 
-Voit halutessasi tutustua sovellukseen osoitteessa: https://ruokarahina.fly.dev/
+You can familiarize yourself with the application here: https://ruokarahina.fly.dev/
 
 ## Ohjeet
 
-Kloonaa repo komennolla
+Clone the repository
 ```
 git clone https://github.com/martansk/ruokarahina.git
 ```
 
-Koneelle tulee olla asennettuna Node.js ja npm.
+The app requires Node.js and npm installed.
+
 
 ### Backend
 
-Mikäli koneelle on asennettu Docker ja Docker compose, voit käynnistää backendin komennolla
+If your machine has Docker and Docker compose installed, you can start the backend with command
+
 ```
 docker-compose up --build
 ```
 
-Muussa tapauksessa asenna ensin tarvittavat kirjastot komennolla
+Otherwise you need to install the required dependencies
 ```
 npm install
 ```
 
-Ja käynnistä backend komennolla
+And start the backend
 ```
 npm start
 ```
 
-Tämän jälkeen backend on saatavilla osoitteessa http://localhost:8080
+After this, the backend runs in url http://localhost:8080
 
-Testit voi ajaa komennolla
+Test can be run with
 ```
 npm test
 ```
 
 ### Frontend
 
-Asenna tarvittavat kirjastot
+Install the required dependencies
 ```
 npm install
 ```
 
-
-
-Käynnistä sovellus
+Start the application
 ```
 npm start
 ```
 
-Sovellus aukeaa osoitteeseen http://localhost:3000/
+After this, the frontend runs in url http://localhost:3000/
 
-Tilanhallinnan yksikkötestit voi ajaa komennolla
+Run the unit tests
 ```
 npm test
 ```
 
-Sovelluksen voi buildata komennolla
+Build the app
 ```
 npm run build
 ```
 
-## Lisätietoa
-Lisätietoa backendin ja frontendin toiminnasta kunkin kansion README.md tiedostossa.
+## More information
+You can find more information about the backend and the frontend in the README.md file of the folder.

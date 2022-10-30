@@ -1,16 +1,16 @@
-# HTTP metodit:
-GET http://localhost:3001/api/food/omena
-Ruokien hakuominaisuus. Palauttaa kaikki ruoka-aineet, joiden nimessä on omena.
+# HTTP methods
+GET http://localhost:3001/api/food/omena \
+Searches the food. Returns all the ingredients which name contain "omena".
 
-GET http://localhost:3001/api/food/4002
-Palauttaa yksittäisen ruoka-aineen id:llä.
+GET http://localhost:3001/api/food/4002 \
+Searching with id returns a single ingredient.
 
-Mikäli hakusanoilla ei löydy tuloksia, palautetaan tyhjä lista.
+If there are no search results, an empty list is returned.
 
-Väärä syntaksi hakusanassa esim. http://localhost:3001/api/food/*? palauttaa 400.
+Non-valid syntax e.g. http://localhost:3001/api/food/*? returns 400.
 
-POST http://localhost:3001/api/battle/initialize
-Payloadina pelaajien statsit. Palauttaa ottelun kulun
+POST http://localhost:3001/api/battle/initialize \
+Players' stats as a payload. Returns the progress of the match turn by turn.
 
 Payload:
 
